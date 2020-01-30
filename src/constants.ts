@@ -1,0 +1,1 @@
+export const EXT = 10000;
