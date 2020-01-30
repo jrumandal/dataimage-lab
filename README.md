@@ -13,6 +13,11 @@ See how I did it.
 #### Install
 `npm install`
 
+#### Install dev dep
+(make sure to install dev dependencies as well, just in case ;P)
+
+`npm install --save-dev`
+
 #### Start
 `npm start`
 
