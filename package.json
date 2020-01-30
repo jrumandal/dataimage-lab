@@ -1,0 +1,22 @@
+{
+  "name": "dataimage-lab",
+  "version": "1.0.0",
+  "description": "Playground for ArrayBuffer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jrumandal/dataimage-lab.git"
+  },
+  "keywords": [
+    "arraybuffer"
+  ],
+  "author": "John Ralph Umandal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jrumandal/dataimage-lab/issues"
+  },
+  "homepage": "https://github.com/jrumandal/dataimage-lab#readme"
+}
