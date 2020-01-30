@@ -79,7 +79,7 @@ export class Graph {
         const buffer: Uint8ClampedArray = this.generateBuffer();
         
         this.drawFunction(buffer, mathFunctions.abs, COLORS.CYAN);
-        // this.drawFunction(buffer, mathFunctions.circle, COLORS.CYAN);
+        this.drawFunction(buffer, mathFunctions.circonference, COLORS.RED);
         this.drawFunction(buffer, mathFunctions.curve, COLORS.BLUE);
         this.drawFunction(buffer, mathFunctions.reversedSinFunction, COLORS.PINK);
         this.drawFunction(buffer, mathFunctions.sin, COLORS.VIOLET);
