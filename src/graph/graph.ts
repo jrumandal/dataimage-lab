@@ -60,31 +60,31 @@ export class Graph {
                 y: Math.floor((i/4) / this._width),
             });
     
-            if(mathFunctions.x(p) || mathFunctions.y(p)) this.mutatePixel(bufferRef, i, COLORS.RED);
+            if(mathFunctions.x(p) || mathFunctions.y(p)) this.mutatePixel(bufferRef, i, COLORS.BLACK);
         }
     };
 
-    drawFunction(bufferRef: Uint8ClampedArray, mathFunction: (...args: any[]) => any): void {
+    drawFunction(bufferRef: Uint8ClampedArray, mathFunction: (...args: any[]) => any, color: Partial<PixelColor>): void {
         for (let i = 0; i < bufferRef.byteLength; i += BYTE_PER_PIXEL) {
             const p = this.applyTransition({
                 x: (i/4) % this._width,
                 y: Math.floor((i/4) / this._width),
             });
     
-            if(mathFunction(p)) this.mutatePixel(bufferRef, i, COLORS.CYAN);
+            if(mathFunction(p)) this.mutatePixel(bufferRef, i, color);
         }
     };
-
+    
     drawGraph(): void {
         const buffer: Uint8ClampedArray = this.generateBuffer();
-
+        
+        this.drawFunction(buffer, mathFunctions.abs, COLORS.CYAN);
+        // this.drawFunction(buffer, mathFunctions.circle, COLORS.CYAN);
+        this.drawFunction(buffer, mathFunctions.curve, COLORS.BLUE);
+        this.drawFunction(buffer, mathFunctions.reversedSinFunction, COLORS.PINK);
+        this.drawFunction(buffer, mathFunctions.sin, COLORS.VIOLET);
+        
         this.drawAxis(buffer);
-        this.drawFunction(buffer, mathFunctions.abs);
-        // this.drawFunction(buffer, mathFunctions.circle);
-        this.drawFunction(buffer, mathFunctions.curve);
-        this.drawFunction(buffer, mathFunctions.reversedSinFunction);
-        this.drawFunction(buffer, mathFunctions.sin);
-
         this.drawBuffer(buffer);
     };
 
