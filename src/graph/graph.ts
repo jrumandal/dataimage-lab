@@ -1,7 +1,13 @@
 import { PixelColor, BYTE_PER_PIXEL, COLORS } from "../interfaces/pixel.interface";
 import { Point } from "../interfaces/pointer.interface";
 import * as mathFunctions from "../utils/math-functions";
+import { MAX_BYTE_VALUE } from "../constants";
 
+/**
+ * Contains implementation to manage and manipulate pixels,
+ * PLEASE dont mind for the documentation.
+ * Its free code :P
+ */
 export class Graph {
     private _width: number;
     private _height: number;
@@ -86,7 +92,7 @@ export class Graph {
         for (let i = 0; i < bufferRef.byteLength; i++) {
             this.mutatePixel(bufferRef, i, {
                 ...COLORS.CYAN,
-                r: Math.floor(i / 256 % 256),
+                r: Math.floor(i / MAX_BYTE_VALUE % MAX_BYTE_VALUE),
             });
         }
     };
