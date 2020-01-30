@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/jrumandal/dataimage-lab/issues"
   },
-  "homepage": "https://github.com/jrumandal/dataimage-lab#readme"
+  "homepage": "https://github.com/jrumandal/dataimage-lab#readme",
+  "devDependencies": {
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.5"
+  }
 }
